@@ -38,8 +38,13 @@ public class PlayerLook : MonoBehaviour
         xRotation -= mouseY * sensY * multiplier;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-    }
+    	}
+
+//	void XRotate(){
+//		while(true){
+//			if (Input.GetKey("q")) yRotation += 90f;
+//			if (Input.GetKey("r")) yRotation -= 90f;
+//		}
+//	}
     
-
-
 }
