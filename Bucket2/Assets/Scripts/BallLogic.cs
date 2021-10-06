@@ -12,7 +12,7 @@ public class BallLogic : MonoBehaviour
     {
         originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         //simpler alternative: originalPos = gameObject.transform.position;
-		GetComponent<Rigidbody>().useGravity = false;
+		//GetComponent<Rigidbody>().useGravity = false;
 
     
     }
