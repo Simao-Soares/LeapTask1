@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,11 +16,20 @@ public class GameManager : MonoBehaviour
     public Text NYellowBallsText;
     public Text NGreyBallsText;
     
-    private GameObject GreenBall;
-    private GameObject YellowBall;
-    private GameObject GreyBall;
+    public GameObject GreenBall;
+	public GameObject YellowBall;
+	public GameObject GreyBall;
+
+
 
     //increment
+
+	void Start()
+	{
+		newBall();
+	}
+
+
 
 
     public void PlayerScores5(){
@@ -29,8 +40,9 @@ public class GameManager : MonoBehaviour
         this.NGreenBallsText.text = NGreenBalls.ToString();
 
         Debug.Log("+5 pontos");
-        GreenBall = GameObject.Find("Ball1");
-        GreenBall.GetComponent<BallLogic>().ResetPos();
+		GreenBall = GameObject.Find("Ball1(Clone)");
+		//Destroy(GreenBall);
+		newBall();
 
     }
         
@@ -42,8 +54,9 @@ public class GameManager : MonoBehaviour
         this.NYellowBallsText.text = NYellowBalls.ToString();
 
         Debug.Log("+10 pontos");
-        YellowBall = GameObject.Find("Ball2");
-        YellowBall.GetComponent<BallLogic>().ResetPos();
+		YellowBall = GameObject.Find("Ball2(Clone)");
+		//Destroy(YellowBall);
+		newBall();
     }
 
     public void PlayerScores1(){
@@ -54,7 +67,22 @@ public class GameManager : MonoBehaviour
         this.NGreyBallsText.text = NGreyBalls.ToString();
 
         Debug.Log("+1 pontos");
-        GreyBall = GameObject.Find("Ball3");
-        GreyBall.GetComponent<BallLogic>().ResetPos();
+		GreyBall = GameObject.Find("Ball3(Clone)");
+		//Destroy(GreyBall);
+		newBall();
     }
+
+	public void newBall(){
+		Random rnd = new Random();
+		int ballcolour = rnd.Next(1, 4); // creates a number between 1 and 3
+		Vector3 center = new Vector3(0.000999927521f, 0.449999988f, -0.527999997f);
+
+		if (ballcolour==1) Instantiate(GreenBall, center, Quaternion.identity);
+		else if (ballcolour==2) Instantiate(YellowBall, center, Quaternion.identity);
+		else Instantiate(GreyBall, center, Quaternion.identity);
+	}
+
+	public void wrongBucket(){
+		
+	}
 }
