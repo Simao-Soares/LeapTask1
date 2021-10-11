@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Green
+  - Yellow
+  - Grey
   layers:
   - Default
   - TransparentFX

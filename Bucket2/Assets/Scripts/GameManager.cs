@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
 	public GameObject YellowBall;
 	public GameObject GreyBall;
 
+	public GameObject[] GreenBalls;
+	public GameObject[] YellowBalls;
+	public GameObject[] GreyBalls;
+
 
 
     //increment
@@ -40,9 +44,13 @@ public class GameManager : MonoBehaviour
         this.NGreenBallsText.text = NGreenBalls.ToString();
 
         Debug.Log("+5 pontos");
-		GreenBall = GameObject.Find("Ball1(Clone)");
-		//Destroy(GreenBall);
+		GreenBalls = GameObject.FindGameObjectsWithTag("Green");
+
+//		foreach (GameObject ball in GreenBalls){
+//			if (ball != null ) Destroy(ball);
+//		}
 		newBall();
+
 
     }
         
@@ -54,9 +62,13 @@ public class GameManager : MonoBehaviour
         this.NYellowBallsText.text = NYellowBalls.ToString();
 
         Debug.Log("+10 pontos");
-		YellowBall = GameObject.Find("Ball2(Clone)");
-		//Destroy(YellowBall);
+		YellowBalls = GameObject.FindGameObjectsWithTag("Yellow");
+
+//		foreach (GameObject ball in YellowBalls){
+//			if (ball != null ) Destroy(ball);
+//		}
 		newBall();
+
     }
 
     public void PlayerScores1(){
@@ -67,9 +79,13 @@ public class GameManager : MonoBehaviour
         this.NGreyBallsText.text = NGreyBalls.ToString();
 
         Debug.Log("+1 pontos");
-		GreyBall = GameObject.Find("Ball3(Clone)");
-		//Destroy(GreyBall);
+		GreyBalls = GameObject.FindGameObjectsWithTag("Grey");
+
+//		foreach ((GameObject ball in GreyBalls){
+//			if (ball != null ) Destroy(ball);
+//		}
 		newBall();
+
     }
 
 	public void newBall(){
