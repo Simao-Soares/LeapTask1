@@ -14,7 +14,6 @@ public class BucketGrey : MonoBehaviour
 
 		if (collisionInfo.collider.tag == "Green" || collisionInfo.collider.tag == "Yellow" || collisionInfo.collider.tag == "Grey")
 		{
-			Debug.Log("Cesto!");
 			if (collisionInfo.collider.tag == "Grey"){
 				BaseEventData eventData = new BaseEventData(EventSystem.current);
 				this.score1Trigger.Invoke(eventData);
