@@ -37,36 +37,27 @@ public class GameManager : MonoBehaviour
 
 
     public void PlayerScores5(){
-        playerScore = playerScore + 5;
+        playerScore = playerScore + 1;
         this.playerScoreText.text = playerScore.ToString();
 
         NGreenBalls += 1;
         this.NGreenBallsText.text = NGreenBalls.ToString();
-
-        Debug.Log("+5 pontos");
 		GreenBalls = GameObject.FindGameObjectsWithTag("Green");
 
-//		foreach (GameObject ball in GreenBalls){
-//			if (ball != null ) Destroy(ball);
-//		}
 		newBall();
 
 
     }
         
     public void PlayerScores10(){
-        playerScore = playerScore + 10;
+        playerScore = playerScore + 1;
         this.playerScoreText.text = playerScore.ToString();
 
         NYellowBalls += 1;
         this.NYellowBallsText.text = NYellowBalls.ToString();
 
-        Debug.Log("+10 pontos");
 		YellowBalls = GameObject.FindGameObjectsWithTag("Yellow");
 
-//		foreach (GameObject ball in YellowBalls){
-//			if (ball != null ) Destroy(ball);
-//		}
 		newBall();
 
     }
@@ -78,12 +69,8 @@ public class GameManager : MonoBehaviour
         NGreyBalls += 1;
         this.NGreyBallsText.text = NGreyBalls.ToString();
 
-        Debug.Log("+1 pontos");
 		GreyBalls = GameObject.FindGameObjectsWithTag("Grey");
 
-//		foreach ((GameObject ball in GreyBalls){
-//			if (ball != null ) Destroy(ball);
-//		}
 		newBall();
 
     }
