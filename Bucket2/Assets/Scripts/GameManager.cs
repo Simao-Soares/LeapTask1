@@ -85,7 +85,5 @@ public class GameManager : MonoBehaviour
 		else Instantiate(GreyBall, center, Quaternion.identity);
 	}
 
-	public void wrongBucket(){
-		
-	}
+
 }
