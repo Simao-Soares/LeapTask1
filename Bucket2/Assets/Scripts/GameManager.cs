@@ -25,12 +25,10 @@ public class GameManager : MonoBehaviour
 	public GameObject[] GreyBalls;
 
 
-
-    //increment
-
 	void Start()
 	{
-		newBall();
+		//newBall();
+        //uncomment for bucket task 
 	}
 
 
@@ -84,6 +82,28 @@ public class GameManager : MonoBehaviour
 		else if (ballcolour==2) Instantiate(YellowBall, center, Quaternion.identity);
 		else Instantiate(GreyBall, center, Quaternion.identity);
 	}
+
+
+    //---------------------------- ROWING ------------------------------------
+
+    public GameObject LeftRow;
+    public GameObject RightRow; 
+
+    IEnumerator Wait05(){
+        yield return new WaitForSecondsRealtime(0.5f);
+    }
+
+    public void leftRowUI(){
+        LeftRow.SetActive(true);
+        Wait05();
+        LeftRow.SetActive(false);
+    }
+
+    public void rightRowUI(){
+        RightRow.SetActive(true);
+        Wait05();
+        RightRow.SetActive(false);
+    }
 
 
 }
